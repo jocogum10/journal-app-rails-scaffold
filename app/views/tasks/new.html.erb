@@ -1,0 +1,24 @@
+<%= form_with model: [@category, @task], local: true do |f| %>
+    <p>
+        <% if @task.errors.any? %>
+            <ul>
+                <% @task.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        <% end %>
+    </p>
+
+    <p>
+        <%= f.label :name %><br/>
+        <%= f.text_field :name %>
+    </p>
+    <p>
+        <%= f.label :details %><br/>
+        <%= f.text_area :details %>
+    </p>
+
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>

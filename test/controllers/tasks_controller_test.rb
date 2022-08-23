@@ -14,6 +14,9 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "5. edit a task to update task's details" do
-    patch category_task_path(@category.id)
+    @category.tasks.create(name: "test task", details: "details test task")
+    task = @category.tasks.find_by(name: "test task")
+    patch category_task_path(@category.id, task.id),  params: {task: {name: "test task edited", details: "details test task edited", category_id: @category.id}}
+    assert_redirected_to category_tasks_path
   end
 end

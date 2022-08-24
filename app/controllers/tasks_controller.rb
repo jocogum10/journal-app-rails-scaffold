@@ -29,6 +29,21 @@ class TasksController < ApplicationController
     redirect_to category_tasks_path
   end
 
+  def show
+    @task = @category.tasks.find(params[:id])
+  end
+
+  def destroy
+    @task = @category.tasks.find(params[:id])
+    @task.destroy
+    redirect_to category_tasks_path
+  end
+
+  def today
+    @tasks = Task.where(created_at: >= DateTime.current.to_date)
+    @task_cat = @category
+  end
+
   private
 
   def get_category

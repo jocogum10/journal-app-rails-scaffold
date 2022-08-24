@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<table>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Category</th>
+            <th>Details</th>
+            <th>Created</th>
+            <th>Last Updated</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @task.id %></td>
+            <td><%= @task.name %></td>
+            <td><%= @task.details %></td>
+            <td><%= @task.created_at %></td>
+            <td><%= @task.updated_at %></td>
+        </tr>
+    </tbody>
+</table>
+
+<div>
+    <%= link_to 'Edit Task', edit_category_task_path(@category.id, @task.id)%> |
+    <%= link_to "Back to tasks", category_tasks_path(@category) %> |
+    <%= link_to "Back to categories", categories_path %>
+
+    <%= button_to 'Delete this task', category_task_path(@category.id, @task.id), {method: :delete} %>
+</div>

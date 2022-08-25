@@ -27,11 +27,24 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "7 .delete a task to lessen my unnecessary daily tasks" do
+  test "7. delete a task to lessen my unnecessary daily tasks" do
     @category.tasks.create(name: "test number 7", details: "details test task for number 6")
     task = @category.tasks.find_by(name: "test number 7")
     delete category_task_path(@category.id, task.id)
     assert_redirected_to category_tasks_path
   end
   
+  test "8. view my tasks for today" do
+    @category.tasks.create(name: "test number 8 first", details: "details test task for number 8")
+    @category.tasks.create(name: "test number 8 second", details: "details test task for number 8")
+    @category.tasks.create(name: "test number 8 third", details: "details test task for number 8")
+    @category.tasks.where(created_at: Date.today.beginning_of_day..Date.today.end_of_day)
+    get tasks_today_path(@category.id)
+    assert_select "tbody" do |elements|
+      elements.each do |element|
+        assert_select element, "tr", 3
+      end
+    end
+  end
+
 end

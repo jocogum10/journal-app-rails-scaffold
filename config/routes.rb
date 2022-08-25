@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
+  get 'categories/:category_id/tasks/today' => 'tasks#today', as: 'tasks_today'
+
   resources :categories do
     resources :tasks
   end
@@ -6,6 +9,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  get 'categories/:category_id/today' => 'tasks#today', as: 'tasks_today'
+  
 
 end

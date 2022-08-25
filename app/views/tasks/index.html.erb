@@ -20,5 +20,6 @@
 </table>
 
 
-<%= link_to 'New Task', new_category_task_path(@category)%>
-<%= button_to "Back to categories", categories_path, {method: :get} %> 
+<%= link_to 'New Task', new_category_task_path(@category)%> |
+<%= link_to 'Show Task today', tasks_today_path(@category)%> |
+<%= link_to "Back to categories", categories_path %> 

@@ -13,7 +13,7 @@
                 <td><%= task.id %></td>
                 <td><%= task.name %></td>
                 <td><%= task.details %></td>
-                <td><%= link_to 'Details', category_task_path(@task_cat.id, task.id) %></td>
+                <td><%= link_to 'Details', category_task_path(@category, task.id) %></td>
             </tr>
         <% end %>
     </tbody>

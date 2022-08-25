@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :get_category
+  # skip_before_action :get_category, only: [:today]
 
   def index
     @tasks = @category.tasks
@@ -40,8 +41,8 @@ class TasksController < ApplicationController
   end
 
   def today
-    @tasks = Task.where(created_at: >= DateTime.current.to_date)
-    @task_cat = @category
+    # @tasks = Task.where(created_at: Date.today.beginning_of_day..Date.today.end_of_day)
+    @tasks = @category.tasks.where(created_at: Date.today.beginning_of_day..Date.today.end_of_day)
   end
 
   private

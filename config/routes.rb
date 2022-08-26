@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  root to: 'categories#index'
   get 'categories/:category_id/tasks/today' => 'tasks#today', as: 'tasks_today'
 
   resources :categories do

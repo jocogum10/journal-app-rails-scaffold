@@ -1,7 +1,12 @@
 require "test_helper"
 
 class CategoriesControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+  
   setup do
+    post user_session_path
+    sign_in users(:admin)
+    post user_session_url
     @category = categories(:one)
   end
 

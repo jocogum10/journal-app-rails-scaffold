@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :authenticate_user!
   before_action :get_category
   # skip_before_action :get_category, only: [:today]
 

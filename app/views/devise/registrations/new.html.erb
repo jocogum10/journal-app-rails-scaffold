@@ -1,0 +1,31 @@
+<div class="w-25">
+  <main class="form-signin w-100 m-auto">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+      <div class="form-floating">
+        <%= f.email_field :email, id: "floatingInput", class: "form-control", placeholder: "name@example.com" %>
+        <%= f.label :email , for: "floatingInput" %>
+      </div>
+
+      <div class="form-floating">
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-control", id:"floatingPassword", placeholder:"Password" %>
+        <%= f.label :password, for:"floatingPassword" %>
+        <% if @minimum_password_length %>
+        <div id="emailHelp" class="form-text">(<%= @minimum_password_length %> characters minimum)</div>
+        <% end %>
+      </div>
+
+      <div class="form-floating">
+        
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", id:"floatingPassword", placeholder:"Password" %>
+        <%= f.label :password_confirmation , for:"floatingPassword" %><br />
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up", class: "w-100 btn btn-lg btn-primary" %>
+      </div>
+    <% end %>
+  </main>
+</div>

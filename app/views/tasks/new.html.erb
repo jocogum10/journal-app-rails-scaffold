@@ -1,3 +1,6 @@
+
+<div class="w-50 mx-auto">
+
 <%= form_with model: [@category, @task], local: true do |f| %>
     <p>
         <% if @task.errors.any? %>
@@ -10,15 +13,16 @@
     </p>
 
     <p>
-        <%= f.label :name %><br/>
-        <%= f.text_field :name %>
+        <%= f.label :name, for: "exampleFormControlInput1", class: "form-label" %>
+        <%= f.text_field :name, class: "form-control", id: "exampleFormControlInput1" %>
     </p>
     <p>
-        <%= f.label :details %><br/>
-        <%= f.text_area :details %>
+        <%= f.label :details, for: "exampleFormControlTextarea1", class: "form-label" %>
+        <%= f.text_area :details, class: "form-control", id: "exampleFormControlTextarea1", rows: "3" %>
     </p>
 
     <p>
-        <%= f.submit %>
+        <%= f.submit :class => 'btn btn-primary mt-1 mb-3' %>
     </p>
 <% end %>
+</div>

@@ -1,30 +1,23 @@
+<div class="w-50 mx-auto">
 <p style="color: green"><%= notice %></p>
 
-<table>
-    <thead>
-        <tr>
-            <th>id</th>
-            <th>Category</th>
-            <th>Details</th>
-            <th>Created</th>
-            <th>Last Updated</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><%= @task.id %></td>
-            <td><%= @task.name %></td>
-            <td><%= @task.details %></td>
-            <td><%= @task.created_at %></td>
-            <td><%= @task.updated_at %></td>
-        </tr>
-    </tbody>
-</table>
+<div class="card">
+    <div class="card-header">
+        <%= @task.id %> | <%= @task.name %>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title"><%= @task.details %></h5>
+        <p class="card-text"><%= @task.created_at %></p>
+        <p class="card-text"><%= @task.updated_at %></p>
+    </div>
+    <div class="card-footer">
+    <%= link_to 'Edit Task', edit_category_task_path(@category.id, @task.id), class:"btn btn-primary mt-1 mb-3", role: "button"%>
+    <%= link_to "Back to tasks", category_tasks_path(@category), class:"btn btn-primary mt-1 mb-3", role: "button" %>
+    <%= link_to "Back to categories", categories_path, class:"btn btn-primary mt-1 mb-3", role: "button" %>
 
-<div>
-    <%= link_to 'Edit Task', edit_category_task_path(@category.id, @task.id)%> |
-    <%= link_to "Back to tasks", category_tasks_path(@category) %> |
-    <%= link_to "Back to categories", categories_path %>
-
-    <%= button_to 'Delete this task', category_task_path(@category.id, @task.id), {method: :delete} %>
+    <%= button_to 'Delete this task', category_task_path(@category.id, @task.id), {method: :delete, class:"btn btn-danger mt-1 mb-3", form: {style: 'display:inline-block;'}} %>
 </div>
+</div>
+</div>
+
+

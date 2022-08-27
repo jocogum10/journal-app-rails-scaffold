@@ -1,19 +1,19 @@
-<table>
+<table class="table">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Details</th>
-            <th>Show</th>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Details</th>
+            <th scope="col">Show</th>
         </tr>
     </thead>
     <tbody>
         <% @tasks.each do |task| %>
-            <tr>
+            <tr scope="row">
                 <td><%= task.id %></td>
                 <td><%= task.name %></td>
                 <td><%= task.details %></td>
-                <td><%= link_to 'Details', category_task_path(@category, task.id) %></td>
+                <td><%= link_to 'Details', category_task_path(@category, task.id), class: "btn btn-primary", role: "button" %></td>
             </tr>
         <% end %>
     </tbody>

@@ -23,26 +23,20 @@
         <ul class="nav nav-pills">
           <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to "Home", root_path, {class: "nav-link"} %>
-            </li>
-            <li class="nav-item">
               <%= link_to "Categories", root_path, {class: "nav-link"} %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Tasks", root_path, {class: "nav-link"} %>
             </li>
             <li class="nav-item">
               <%= link_to "Tasks Today", root_path, {class: "nav-link"} %>
             </li>
             <li class="nav-item">
-            <a class="nav-link disabled" href="#">Logged in as <%= current_user.email %> </a>
+            <a class="nav-link disabled" href="#"><%= current_user.email %> </a>
             </li>
             <li class="nav-item">
               <%= button_to "Log out", destroy_user_session_path, {method: :delete, class: "btn btn-danger"} %>
             </li>
           <% else %>
               <li class="nav-item">
-                <%= link_to "Sign in", new_user_session_path, {class: "btn btn-outline-primary", role: "button"} %>
+                <%= link_to "Log in", new_user_session_path, {class: "btn btn-outline-primary", role: "button"} %>
               </li>
               <li class="nav-item">
                 <%= link_to "Sign up", new_user_registration_path, {class: "nav-link" , role: "button"} %>
@@ -59,6 +53,6 @@
     
 
     <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   </body>
 </html>

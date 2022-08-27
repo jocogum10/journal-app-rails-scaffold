@@ -1,13 +1,13 @@
-<div class="w-25">
+<div class="w-25 mx-auto">
   <main class="form-signin w-100 m-auto">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <h1 class="h3 mb-3 fw-normal">Please log in</h1>
-      <div class="form-floating">
+      <div class="form-floating my-1">
         <%= f.email_field :email, autofocus: true, autocomplete: "email", id: "floatingInput", class: "form-control", placeholder: "name@example.com" %>
         <%= f.label :email, for: "floatingInput" %>
       </div>
 
-      <div class="form-floating">
+      <div class="form-floating my-1">
         <%= f.password_field :password, autocomplete: "current-password", class: "form-control", id:"floatingPassword", placeholder:"Password" %>
         <%= f.label :password, for:"floatingPassword" %>
       </div>
@@ -24,5 +24,6 @@
       </div>
     <% end %>
   </main>
+  <%= render "devise/shared/links" %>
 </div>
-<%= render "devise/shared/links" %>
+

@@ -1,3 +1,5 @@
+
+<div class="w-50 mx-auto">
 <%= form_with model: [@category, @task], scope: :task, url: category_task_path(@category.id), method: :patch, local: true do |f| %>
     
     <% if @task.errors.any? %>
@@ -12,11 +14,12 @@
         </div>
     <% end %>
     
-    <%= f.label 'Tasks Title' %><br>
-    <%= f.text_field :name %><br>
+    <%= f.label 'Tasks Title', for: "exampleFormControlInput1", class: "form-label" %>
+    <%= f.text_field :name, class: "form-control", id: "exampleFormControlInput1" %>
 
-    <%= f.label 'Category Details' %><br>
-    <%= f.text_area :details %><br>
+    <%= f.label 'Category Details', for: "exampleFormControlTextarea1", class: "form-label" %>
+    <%= f.text_area :details, class: "form-control", id: "exampleFormControlTextarea1", rows: "3" %>
 
     <%= f.submit "Edit Task" %>
 <% end %>
+</div>

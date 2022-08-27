@@ -1,25 +1,25 @@
-<table>
+<table class="table">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Details</th>
-            <th>Show</th>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Details</th>
+            <th scope="col">Show</th>
         </tr>
     </thead>
     <tbody>
         <% @tasks.each do |task| %>
-            <tr>
+            <tr scope="row">
                 <td><%= task.id %></td>
                 <td><%= task.name %></td>
                 <td><%= task.details %></td>
-                <td><%= link_to 'Show Details', category_task_path(@category.id, task.id) %></td>
+                <td><%= link_to 'Details', category_task_path(@category.id, task.id), class: "btn btn-primary", role: "button" %></td>
             </tr>
         <% end %>
     </tbody>
 </table>
 
 
-<%= link_to 'New Task', new_category_task_path(@category)%> |
-<%= link_to 'Show Task today', tasks_today_path(@category)%> |
-<%= link_to "Back to categories", categories_path %> 
+<%= link_to 'New Task', new_category_task_path(@category), class:"btn btn-primary mt-1 mb-3"%>
+<%= link_to 'Show Task today', tasks_today_path(@category), class:"btn btn-primary mt-1 mb-3"%>
+<%= link_to "Back to categories", categories_path, class:"btn btn-primary mt-1 mb-3" %> 

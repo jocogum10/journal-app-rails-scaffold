@@ -1,4 +1,4 @@
-<div class="w-25">
+<div class="w-25 mx-auto">
   <main class="form-signin w-100 m-auto">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
@@ -9,7 +9,7 @@
         <%= f.label :email , for: "floatingInput" %>
       </div>
 
-      <div class="form-floating">
+      <div class="form-floating my-1">
         <%= f.password_field :password, autocomplete: "new-password", class: "form-control", id:"floatingPassword", placeholder:"Password" %>
         <%= f.label :password, for:"floatingPassword" %>
         <% if @minimum_password_length %>
@@ -17,7 +17,7 @@
         <% end %>
       </div>
 
-      <div class="form-floating">
+      <div class="form-floating my-1">
         
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", id:"floatingPassword", placeholder:"Password" %>
         <%= f.label :password_confirmation , for:"floatingPassword" %><br />

@@ -11,12 +11,6 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
     post user_session_url
     @category = Category.create(name: "test category", details: "details of test category")
   end
-  # def second_setup
-  #   post user_session_path
-  #   sign_in users(:admin)
-  #   post user_session_url
-  #   @category = Category.create(name: "test category", details: "details of test category")
-  # end
 
   test "4. create a task for a specific category" do
     login_then_create_category

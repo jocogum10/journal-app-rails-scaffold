@@ -1,16 +1,11 @@
-<div id="<%= dom_id category %>">
-<p>
-    <strong>ID:</strong>
-    <%= category.id %>
-  </p>
-  <p>
-    <strong>Name:</strong>
-    <%= category.name %>
-  </p>
-
-  <p>
-    <strong>Details:</strong>
-    <%= category.details %>
-  </p>
+<div id="<%= dom_id category %>" class="card">
+  <div class="card-header">
+    <%= category.id %> | <%= category.name %>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= category.details %></h5>
+    <p class="card-text">Created: <%= category.created_at %></p>
+    <p class="card-text">Updated: <%= category.updated_at %></p>
+  </div>
 
 </div>

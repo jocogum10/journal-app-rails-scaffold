@@ -31,4 +31,13 @@ $ rails server
 
 ## UI
 ### Login
-![login](https://github.com/jocogum10/job-application-tracker-fe/blob/main/public/login.PNG)
+![login](https://github.com/jocogum10/journal-app-rails-scaffold/blob/main/app/assets/images/login.PNG)
+
+### Sign Up
+![signup](https://github.com/jocogum10/journal-app-rails-scaffold/blob/main/app/assets/images/signup.PNG)
+
+### Categories
+![categories](https://github.com/jocogum10/journal-app-rails-scaffold/blob/main/app/assets/images/categories.PNG)
+
+### Tasks
+![tasks](https://github.com/jocogum10/journal-app-rails-scaffold/blob/main/app/assets/images/tasks.PNG)

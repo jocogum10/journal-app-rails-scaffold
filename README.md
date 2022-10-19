@@ -1,24 +1,34 @@
-# README
+# Journal App using Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is a journal app where a logged in user can create tasks and by different categories.
 
-Things you may want to cover:
 
 * Ruby version
+```
+$ ruby 3.1.2
+$ Rails 7.0.3.1
+```
 
-* System dependencies
-
-* Configuration
+* Setup
+```
+ $ bundle install
+```
 
 * Database creation
-
-* Database initialization
+```
+ $ rake db:setup
+```
 
 * How to run the test suite
+```
+$ rails test
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+* Starting the application
+```
+$ rails server
+```
 
-* Deployment instructions
-
-* ...
+## UI
+### Login
+![login](https://github.com/jocogum10/job-application-tracker-fe/blob/main/public/login.PNG)

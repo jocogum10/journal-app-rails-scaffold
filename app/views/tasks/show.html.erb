@@ -6,17 +6,11 @@
         <%= @task.id %> | <%= @task.name %>
     </div>
     <div class="card-body">
-        <h5 class="card-title"><%= @task.details %></h5>
-        <p class="card-text"><%= @task.created_at %></p>
-        <p class="card-text"><%= @task.updated_at %></p>
+        <h5 class="card-title"><%= @task.role %></h5>
+        <p class="card-text"><%= @task.is_approved %></p>
+        <p class="card-text"><%= @task.unconfirmed_email %></p>
     </div>
-    <div class="card-footer">
-    <%= link_to 'Edit Task', edit_category_task_path(@category.id, @task.id), class:"btn btn-primary mt-1 mb-3", role: "button"%>
-    <%= link_to "Back to tasks", category_tasks_path(@category), class:"btn btn-primary mt-1 mb-3", role: "button" %>
-    <%= link_to "Back to categories", categories_path, class:"btn btn-primary mt-1 mb-3", role: "button" %>
-
-    <%= button_to 'Delete this task', category_task_path(@category.id, @task.id), {method: :delete, class:"btn btn-danger mt-1 mb-3", form: {style: 'display:inline-block;'}} %>
-</div>
+    
 </div>
 </div>
 
